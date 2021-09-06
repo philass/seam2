@@ -40,5 +40,4 @@ jobs:
           apt-get install --yes postgresql-client
 
       - name: Query database
-        run: npm install
-        run: bash reset.sh
+        run: npm install && bash reset.sh
