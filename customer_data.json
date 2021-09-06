@@ -1,0 +1,112 @@
+{
+  "products": [
+    { "category": "lock", "productName": "Yale" },
+    { "category": "lock", "productName": "Schlage" },
+    { "category": "doorbell", "productName": "Ring" },
+    { "category": "camera", "productName": "SecureSystemsCam" },
+    { "category": "noisesensor", "productName": "NoiseDetector" }
+  ],
+  "customers": [
+    {
+      "name": "Banking Company Co",
+      "email": "banker@banking.com",
+      "devices": [
+        {
+          "category": "lock",
+          "deviceName": "Front Door Lock",
+          "productName": "Yale",
+          "activeCodes": [
+            {
+              "name": "CEO Personal Code",
+              "code": "1234",
+              "alwaysActive": true
+            },
+            {
+              "name": "Management Entry Code",
+              "code": "9934",
+              "alwaysActive": true
+            },
+            {
+              "name": "Janitor Staff Code",
+              "activeHours": ["5:00 UTC", "7:00 UTC"],
+              "code": "1223"
+            }
+          ]
+        },
+        {
+          "category": "doorbell",
+          "deviceName": "Front Doorbell",
+          "productName": "Ring"
+        }
+      ]
+    },
+    {
+      "name": "Cozy Hotel LLC",
+      "email": "rick@hotel.com",
+      "devices": [
+        {
+          "category": "camera",
+          "productName": "SecureSystemsCam"
+        },
+        {
+          "category": "lock",
+          "deviceName": "Room 410",
+          "productName": "Yale",
+          "activeCodes": [
+            {
+              "name": "Paul Fakely",
+              "code": "6787",
+              "startsAt": "2021-09-03T00:52:42.920Z",
+              "endsAt": "2021-09-20T00:52:42.920Z"
+            }
+          ]
+        },
+        {
+          "category": "lock",
+          "deviceName": "Room 410",
+          "productName": "Yale",
+          "activeCodes": [
+            {
+              "name": "Abigail Notrealson",
+              "code": "1298",
+              "startsAt": "2021-09-10T00:52:42.920Z",
+              "endsAt": "2021-09-15T00:52:42.920Z"
+            },
+            {
+              "name": "Mr. Dimaginary",
+              "code": "4431",
+              "startsAt": "2021-09-16T00:52:42.920Z",
+              "endsAt": "2021-09-30T00:52:42.920Z"
+            }
+          ]
+        },
+        {
+          "category": "lock",
+          "deviceName": "Room 410",
+          "productName": "Yale",
+          "activeCodes": [
+            {
+              "name": "Patricia Madeupa",
+              "code": "0782",
+              "startsAt": "2021-09-03T00:52:42.920Z",
+              "endsAt": "2021-09-15T00:52:42.920Z"
+            }
+          ]
+        },
+        {
+          "category": "lock",
+          "deviceName": "Room 410",
+          "productName": "Yale",
+          "activeCodes": [
+            {
+              "name": "Carol Foobar",
+              "code": "6099",
+              "startsAt": "2021-09-05T00:52:42.920Z",
+              "endsAt": "2021-09-07T00:52:42.920Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

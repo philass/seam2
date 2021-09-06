@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "node-pg-migrate": "^5.10.0",
+    "pg": "^8.7.1"
+  },
+
+  "scripts" : {
+    "migrate": "node-pg-migrate"
+  }
+}
