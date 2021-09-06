@@ -34,10 +34,15 @@ jobs:
           --health-retries 5
 
     steps:
+      - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
       - name: Install PostgreSQL client
         run: |
           apt-get update
           apt-get install --yes postgresql-client
 
       - name: Query database
-        run: npm install && bash reset.sh
+        run: |
+          npm install
+          bash reset.sh
