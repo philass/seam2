@@ -1,30 +1,39 @@
+import React from 'react';
 import useRouter from "next/router";
-const fetcher = (url) => fetch(url).then((res) => res.json())
+import useSWR from 'swr'
 
+var email;
+var data;
 
-  //const { data, error } = useSWR('/api/login', fetcher)
-  //if (error) return <div>Failed to load</div>
-  //if (!data) return <div>Loading...</div>
+const fetcher = (url) => fetch(url).then((res) => res.json().then((data) => {
+  var customerId = data;
+  var router = useRouter;
+  router.push(`http://localhost:3000/customer/${customerId}`);
+  }))
+
 
 export default function Index() {
+  // https://github.com/vercel/swr/issues/254
+  const [shouldFetch, setShouldFetch] = React.useState(false);
+
+  var {data, error} = useSWR(shouldFetch ? `http://localhost:3000/api/login/${email}` : null, fetcher);
+  if (error) {
+    return <div>No matching email</div>;
+  }
+
   return (
-      <form
-        onSubmit={async e => {
-          var email = document.getElementById("email_id").value;
-          e.preventDefault();
-          var response = await fetch(`http://localhost:3000/api/login/${email}`);
-          var customerId = await response.json();
-          const router = useRouter;
-          router.push(`http://localhost:3000/customer/${customerId}`);
-        }
-      }>
-        <div>
-          <label>Email:</label>
-          <input type="text" name="email" id="email_id"/>
-        </div>
-        <div>
-          <input type="submit" value="Log In" />
-        </div>
-      </form>
+    <div>
+      <label>Email:</label>
+      <input type="text" name="email" id="email_id"/>
+      <button type="button" onClick={ () => {
+        email = document.getElementById("email_id").value;
+        setShouldFetch(true);
+        }}>
+      Click me
+    </button>
+    </div>
   );
 };
+
+//  if (error) return <div>{error.message}</div>
+//  if (!data) return <div>Loading...</div>

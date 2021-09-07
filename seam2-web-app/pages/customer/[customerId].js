@@ -15,8 +15,8 @@ export default function Customer() {
   //console.log(devices);
 
 
-  return (<div></div>);
-  //return renderTableData(data);;
+  //return (<div></div>);
+  return renderTableData(data);;
   //return renderTableData(data);
 } 
 
@@ -34,31 +34,3 @@ function renderTableData(rows) {
      )
   })
 }
-//
-//  return (
-//    <table>
-//      <thead>
-//        <tr>
-//          <th>Name</th>
-//          <th>Height</th>
-//          <th>Mass</th>
-//          <th>Hair color</th>
-//          <th>Skin color</th>
-//          <th>Eye color</th>
-//          <th>Gender</th>
-//        </tr>
-//      </thead>
-//      <tbody>
-//        <tr>
-//          <td>{data.name}</td>
-//          <td>{data.height}</td>
-//          <td>{data.mass}</td>
-//          <td>{data.hair_color}</td>
-//          <td>{data.skin_color}</td>
-//          <td>{data.eye_color}</td>
-//          <td>{data.gender}</td>
-//        </tr>
-//      </tbody>
-//    </table>
-//  )
-//}
