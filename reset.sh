@@ -1,5 +1,5 @@
 # Delete old test database
-psql -h localhost -U postgres -c "DROP DATABASE test;"
+psql -h localhost -U postgres -c "DROP DATABASE IF EXISTS test;"
 # Make fresh test database
 psql -h localhost -U postgres -c "CREATE DATABASE test;"
 # Migrate database schema
