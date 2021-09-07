@@ -1,11 +1,14 @@
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
+import useRouter2 from "next/router";
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
+//var query;
+var customerId
 
 export default function Customer() {
-  const { query } = useRouter()
-  var customerId = query.customerId;
+  var { query } = useRouter();
+  customerId = query.customerId;
   var { data, error } = useSWR(customerId === undefined ? null : `http://localhost:3000/api/devices/${customerId}`, fetcher);
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
@@ -26,11 +29,18 @@ function renderTableData(rows) {
         </tr>
      )
   });
-  return <>
+  return (
+    <>
+    <table>
+    <tbody>
     {cmp}
-      <button type="button" onClick={ () => {
+    </tbody>
+    </table>
+    <button type="button" onClick={ () => {
+        var router = useRouter2;
+        router.push(`http://localhost:3000/new_device/${customerId}`);
         }}>
-      Click me
+    Add device
     </button>
-    </>
+    </>);
 }

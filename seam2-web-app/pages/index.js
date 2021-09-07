@@ -3,14 +3,12 @@ import useRouter from "next/router";
 import useSWR from 'swr'
 
 var email;
-var data;
 
 const fetcher = (url) => fetch(url).then((res) => res.json().then((data) => {
   var customerId = data;
   var router = useRouter;
   router.push(`http://localhost:3000/customer/${customerId}`);
-  }))
-
+}))
 
 export default function Index() {
   // https://github.com/vercel/swr/issues/254
@@ -26,14 +24,12 @@ export default function Index() {
       <label>Email:</label>
       <input type="text" name="email" id="email_id"/>
       <button type="button" onClick={ () => {
-        email = document.getElementById("email_id").value;
-        setShouldFetch(true);
-        }}>
-      Click me
-    </button>
+          email = document.getElementById("email_id").value;
+          setShouldFetch(true);
+        }
+      }>
+      Log In
+      </button>
     </div>
   );
 };
-
-//  if (error) return <div>{error.message}</div>
-//  if (!data) return <div>Loading...</div>

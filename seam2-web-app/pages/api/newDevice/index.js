@@ -26,6 +26,7 @@ export default async function devicesHandler(query, res) {
   customerId = parseInt(customerId);
   productId = parseInt(productId);
   if (customerId === NaN || productId === NaN) {
+    //
     // I could make this more clear
     res.status(404).json({ message: `Could not convert customerId or productId to integer`});
   } else {
