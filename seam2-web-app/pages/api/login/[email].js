@@ -11,13 +11,11 @@ function createPool() {
 
 async function queryCustomer(client, email) {
   var query = `SELECT id FROM customers WHERE email = '${email}';`
-  console.log("query", query);
   var queryResult = await client.query(query);
   var rows = queryResult.rows
   if (rows.length === 0)
     return null;
   var id = rows[0].id;
-  console.log('id', id);
   return id;
 }
 
